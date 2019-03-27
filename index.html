@@ -7,66 +7,108 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Anton|Josefin+Sans|Noto+Sans+KR" rel="stylesheet">
+    <link rel="stylesheet" href="/animsition-master/animsition-master/dist/css/animsition.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="/animsition-master/animsition-master/dist/js/animsition.min.js"></script>
     <title>Tues3 Study</title>
 </head>
 
 <body>
-    <img src="images/left.png" alt="" id="left">
-    <h1 id="title">TUES3</h1>
-    <h2 id="name">멋쟁이사자처럼 스터디</h2>
-    <section class="nameCard">
-        <a href="">
-            <div class="card">
-                <img src="" alt="" style="width:100%">
-                <div class="container">
-                    <h4><b>최민규</b></h4>
-                    <p>글로벌경영학과</p>
-                </div>
-            </div>
-        </a>
+    <div class="animsition" id="animisition">
+        <img src="images/left.png" alt="" id="left">
+        <h1 id="title">TUES3</h1>
+        <h2 id="name">멋쟁이사자처럼 스터디</h2>
+        <div id="card-wrap">
+            <div class="nameCard">
+                <a class="animsition-link" href="CMG/Assignment 1/VFS.htm" data-animsition-out-class="fade-out-down-sm"
+                data-animsition-out-duration="800">
+                    <div class="card">
+                        <img id="cmg" src="images/cmg.jpg" alt="">
+                        <div class="container">
+                            <h4><b>최민규</b></h4>
+                            <p>글로벌경영학과</p>
+                        </div>
+                    </div>
+                </a>
 
-        <a href="">
-            <div class="card">
-                <img src="" alt="" style="width:100%">
-                <div class="container">
-                    <h4><b>남정원</b></h4>
-                    <p>영상학과</p>
-                </div>
-            </div>
-        </a>
+                <a class="animsition-link" href="NJW/web.html" data-animsition-out-class="flip-out-y-fr"
+                data-animsition-out-duration="800">
+                    <div class="card">
+                        <img id="njw" src="images/njw.PNG" alt="">
+                        <div class="container">
+                            <h4><b>남정원</b></h4>
+                            <p>영상학과</p>
+                        </div>
+                    </div>
+                </a>
 
-        <a href="">
-            <div class="card">
-                <img src="" alt="" style="width:100%">
-                <div class="container">
-                    <h4><b>유채은</b></h4>
-                    <p>컴퓨터교육학과</p>
-                </div>
-            </div>
-        </a>
+                <a class="animsition-link" href="ch/03.25과제/멋사과제1.html" data-animsition-out-class="fade-out-up-lg"
+                data-animsition-out-duration="800">
+                    <div class="card">
+                        <img id="lch" src="images/lch.png">
+                        <div class="container">
+                            <h4><b>유채은</b></h4>
+                            <p>컴퓨터교육학과</p>
+                        </div>
+                    </div>
+                </a>
 
-        <a href="">
-            <div class="card">
-                <img src="" alt="" style="width:100%">
-                <div class="container">
-                    <h4><b>이희재</b></h4>
-                    <p>소비자가족학과</p>
-                </div>
-            </div>
-        </a>
+                <a class="animsition-link" href="LHJ/서비스 소개.html" data-animsition-in-class="zoom-in"
+                    data-animsition-in-duration="1000">
+                    <div class="card">
+                        <img id="lhj" src="images/lhj.jpg" alt="">
+                        <div class="container">
+                            <h4><b>이희재</b></h4>
+                            <p>소비자가족학과</p>
+                        </div>
+                    </div>
+                </a>
 
-        <a href="">
-            <div class="card">
-                <img src="" alt="" style="width:100%">
-                <div class="container">
-                    <h4><b>장덕진</b></h4>
-                    <p>글로벌경영학과</p>
-                </div>
+                <a class="animsition-link" href="JDJ/index.html" data-animsition-out-class="zoom-out-lg"
+                data-animsition-out-duration="800">
+                    <div class="card">
+                        <img id="jdj" src="images/jdj.jpg" alt="">
+                        <div class="container">
+                            <h4><b>장덕진</b></h4>
+                            <p>글로벌경영학과</p>
+                        </div>
+                    </div>
+                </a>
             </div>
-        </a>
+        </div>
 
-    </section>
-    <img src="images/right.png" alt="" id="right">
+        <img src="images/right.png" alt="" id="right">
+
+    </div>
 </body>
+
+<script>
+    $(document).ready(function () {
+        $(".animsition").animsition({
+            inClass: 'fade-in',
+            outClass: 'fade-out',
+            inDuration: 1500,
+            outDuration: 800,
+            linkElement: '.animsition-link',
+            // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+            loading: true,
+            loadingParentElement: 'body', //animsition wrapper element
+            loadingClass: 'animsition-loading',
+            loadingInner: '', // e.g '<img src="loading.svg" />'
+            timeout: false,
+            timeoutCountdown: 5000,
+            onLoadEvent: true,
+            browser: ['animation-duration', '-webkit-animation-duration'],
+            // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+            // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+            overlay: false,
+            overlayClass: 'animsition-overlay-slide',
+            overlayParentElement: 'body',
+            transition: function (url) {
+                window.location.href = url;
+            }
+        });
+    });
+</script>
 
 </html>
